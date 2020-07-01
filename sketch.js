@@ -3,8 +3,10 @@ var Engine = Matter.Engine,
   Events = Matter.Events,
   Bodies = Matter.Bodies;
  
-var particles = [];
+var particle;
+var turn = 0;
 var plinkos = [];
+var divisions = [];
 
 var divisionHeight=300;
 var score =0;
@@ -54,7 +56,12 @@ function setup() {
 function draw() {
   background("black");
   textSize(20)
- //text("Score : "+score,20,30);
+ text("Score : "+score,20,30);
+ text("500", 22,610);
+ text("500", 102,610);
+ text("500", 182,610);
+ text("500", 262,610);
+ text("100", 322,610);
   Engine.update(engine);
  
   
@@ -63,8 +70,9 @@ function draw() {
      plinkos[i].display();
      
    }
+   /*
    if(frameCount%60===0){
-     particles.push(new particle(random(width/2-30, width/2+30), 10,10));
+     particles.push(new Particle(random(width/2-30, width/2+30), 10,10));
      score++;
    }
  
@@ -72,6 +80,7 @@ function draw() {
    
      particles[j].display();
    }
+   */
    for (var k = 0; k < divisions.length; k++) {
      
      divisions[k].display();
